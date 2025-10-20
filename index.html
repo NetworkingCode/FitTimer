@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitTimer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@400;700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+              digital: ['Orbitron', 'sans-serif'],
+              rounded: ['Comfortaa', 'sans-serif'],
+            },
+            keyframes: {
+              'modal-enter': {
+                '0%': { opacity: '0', transform: 'scale(0.95) translateY(10px)' },
+                '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+              },
+              'fade-in-bg': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              'pop-in': {
+                '0%': { transform: 'scale(0.5)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+            },
+            animation: {
+              'modal-enter': 'modal-enter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'fade-in-bg': 'fade-in-bg 0.3s ease-out forwards',
+              'pop-in': 'pop-in 0.2s ease-out forwards',
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-200 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4">
+    <div id="root" class="relative w-full max-w-md h-[90vh] max-h-[800px] rounded-2xl shadow-xl overflow-hidden"></div>
+  </body>
+</html>

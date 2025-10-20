@@ -1,0 +1,5 @@
+{
+  "name": "FitTimer",
+  "description": "A minimalist countdown timer for exercises. Users can configure duration, alarm sound, font, and language on a single, clean screen. It saves the last configuration for convenience.",
+  "requestFramePermissions": []
+}
