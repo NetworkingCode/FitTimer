@@ -1,0 +1,23 @@
+# Base: imagen Node ligera
+FROM node:20-alpine
+
+# Crea directorio de trabajo
+WORKDIR /usr/src/app
+
+# Instala dependencias del sistema que puedan ser necesarias (opcional)
+RUN apk add --no-cache bash git
+
+# Copia package.json y package-lock.json primero para aprovechar cache
+COPY package*.json ./
+
+# Instala dependencias
+RUN npm ci --no-audit --prefer-offline
+
+# Copia el resto del código (esto se usa al build; en dev usaremos bind mount)
+COPY . .
+
+# Exponer puerto por defecto (ajusta si tu app usa otro)
+EXPOSE 3000
+
+# Comando por defecto para desarrollo
+CMD ["npm", "run", "dev"]
